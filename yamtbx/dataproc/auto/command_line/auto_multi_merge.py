@@ -87,7 +87,7 @@ rescut {
 }
 
 batch {
- engine = sge sh *no
+ engine = sge slurm sh *no
   .type = choice(multi=False)
  sge_pe_name = par
   .type = str
@@ -436,6 +436,8 @@ def run(params):
 
     if params.batch.engine == "sge":
         batchjobs = batchjob.SGE(pe_name=params.batch.sge_pe_name)
+    elif params.batch.engine == "slurm":
+        batchjobs = batchjob.SLURM(pe_name="")
     elif params.batch.engine == "sh":
         batchjobs = batchjob.ExecLocal(max_parallel=params.batch.sh_max_jobs)
     else:

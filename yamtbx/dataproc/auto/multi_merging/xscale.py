@@ -51,8 +51,13 @@ class XscaleCycles:
         self.out = out
         self.nproc = nproc
         self.nproc_each = batch_params.nproc_each
-        if batch_params.engine == "sge": self.batchjobs = batchjob.SGE(pe_name=batch_params.sge_pe_name)
-        elif batch_params.engine == "sh": self.batchjobs = batchjob.ExecLocal(max_parallel=batch_params.sh_max_jobs)
+        if batch_params.engine == "sge":
+            self.batchjobs = batchjob.SGE(pe_name=batch_params.sge_pe_name)
+        elif batch_params.engine == "slurm":
+            self.batchjobs = batchjob.SLURM(pe_name="")
+        elif batch_params.engine == "sh": 
+            self.batchjobs = batchjob.ExecLocal(max_parallel=batch_params.sh_max_jobs)
+
         self.all_data_root = None # the root directory for all data
         self.altfile = {} # Modified files
         self.cell_info_at_cycles = {}

@@ -217,7 +217,7 @@ batch {
  par_run = *deltacchalf merging
   .type = choice(multi=True)
   .help = What to run in parallel
- engine = sge *sh
+ engine = sge slurm *sh
   .type = choice(multi=False)
  sge_pe_name = par
   .type = str
@@ -413,6 +413,8 @@ def run(params):
 
     if params.batch.engine == "sge":
         batchjobs = batchjob.SGE(pe_name=params.batch.sge_pe_name)
+    elif params.batch.engine == "slurm":
+        batchjobs = batchjob.SLURM(pe_name="")
     elif params.batch.engine == "sh":
         batchjobs = batchjob.ExecLocal(max_parallel=params.batch.sh_max_jobs)
     else:

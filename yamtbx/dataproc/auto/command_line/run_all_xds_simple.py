@@ -55,7 +55,7 @@ nproc = None
 multiproc = False
  .type = bool
  .help = Parallel processing of multiple xds jobs
-parmethod = *multiprocessing sge
+parmethod = *multiprocessing sge slurm
  .type = choice(multi=False)
  .help = multiprocessing method
 resume = False
@@ -761,7 +761,7 @@ def run(params):
         else: params.nproc = 1
         print "nproc=", params.nproc
 
-        if params.parmethod == "sge": npar = len(xds_dirs)
+        if params.parmethod in ["sge", "slurm"]: npar = len(xds_dirs)
 
         fun = run_all_xds_simple.xds_runmanager(params)
         easy_mp.parallel_map(func=fun,
