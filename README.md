@@ -21,4 +21,4 @@ These packages are included as a part of yamtbx.
 ### Contact Author
 Please use [this form](https://docs.google.com/forms/d/e/1FAIpQLSdINVTX6HtreMzuyeQk7VLsycKLFAL3SmDdARqQg8zpt46MXw/viewform) to contact me.
 
-### this branch support SLURM grid engine
+### NB this fork was modified to support SLURM grid engine, in addition to SGE
