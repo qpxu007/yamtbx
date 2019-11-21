@@ -205,7 +205,10 @@ def directory_included(path, topdir=None, include_dir=[], exclude_dir=[]):
 
     if exclude_dir != []:
         for d in exclude_dir:
-            if directory_included(path, d): return False
+            if os.path.isabs(d):
+                if directory_included(path, d): return False
+            else:
+                if d in l1: return False
         return True
 # directory_included()
 
