@@ -286,11 +286,11 @@ You can easily install KAMO using DIALS/PHENIX environment as DIALS/PHENIX inclu
    * For installation of XDS/XDSSTAT, see [XDSwiki/Installation](http://strucbio.biologie.uni-konstanz.de/xdswiki/index.php/Installation)
    * If you will process EIGER data (h5 files), [H5ToXds](eiger-en.md#eiger2cbf-h5toxds-compatible) is needed
    * rjson can be installed as follows; after installation of R, start R program from user who installed R (root or an account for software installation), and then type `install.packages("rjson")`.
-2. Install [DIALS](https://dials.github.io/installation.html)-1.5 or newer
+2. Install [DIALS](https://dials.github.io/installation.html)-1.5 or newer (**choose Python2**)
 3. Install networkx to dials.python
    1. `cd $DIALS/build`
    2. `./bin/libtbx.python -m easy_install networkx==1.11`
-4. Install scipy to dials.python (Skip this if using DIALS 1.10 or newer)
+4. Install scipy to dials.python (**Skip this if using DIALS 1.10 or newer**)
    1. If Mac, install Xcode.
    2. `cd $DIALS/build`
    3. If Linux: `./bin/libtbx.python -m easy_install scipy==0.18.1`<br>If Mac: `./bin/libtbx.python -m pip install scipy==0.18.1`
@@ -375,6 +375,10 @@ Please also cite literatures of internally used programs like XDS, DIALS, POINTL
 
 ### Researches which used KAMO 
 
+1. Yamaguchi *et al.* (2020) "Crystal structure of Drosophila Piwi" *Nature Communications* doi:[10.1038/s41467-020-14687-1](https://doi.org/10.1038/s41467-020-14687-1) PDB: [6KR6](https://www.rcsb.org/structure/6KR6) Raw data: [Zenodo#3603539](https://doi.org/10.5281/zenodo.3603539)
+1. Yoshizawa *et al.* (2020) "Crystal structures of the cell-division protein FtsZ from Klebsiella pneumoniae and Escherichia coli" *Acta Cryst. F* doi:[10.1107/S2053230X2000076X](https://doi.org/10.1107/S2053230X2000076X) PDB: [6LL5](https://www.rcsb.org/structure/6LL5) [6LL6](https://www.rcsb.org/structure/6LL6)
+1. Izume *et al.* (2020) "Crystal structure of human endothelin ET<sub>B</sub> receptor in complex with sarafotoxin S6b" *Biochemical and Biophysical Research Communications* doi:[10.1016/j.bbrc.2019.12.091](https://doi.org/10.1016/j.bbrc.2019.12.091) PDB: [6LRY](https://www.rcsb.org/structure/6LRY) Raw data: [Zenodo#3603541](https://doi.org/10.5281/zenodo.3603541)
+1. Asada *et al.* (2019) "The Crystal Structure of Angiotensin II Type 2 Receptor with Endogenous Peptide Hormone" *Structure* doi:[10.1016/j.str.2019.12.003](https://doi.org/10.1016/j.str.2019.12.003) PDB: [6JOD](https://www.rcsb.org/structure/6JOD)
 1. Sugishima *et al.* (2019) "Crystal structure of phytochromobilin synthase in complex with biliverdin IXα, a key enzyme in the biosynthesis of phytochrome" *Journal of Biological Chemistry* doi:[10.1074/jbc.RA119.011431](https://doi.org/10.1074/jbc.RA119.011431) PDB: [6KME](https://www.rcsb.org/structure/6KME) [6KMD](https://www.rcsb.org/structure/6KMD)
 1. Vuckovic *et al.* (2019) "Crystal structure of the M5 muscarinic acetylcholine receptor" *PNAS* doi:[10.1073/pnas.1914446116](https://doi.org/10.1073/pnas.1914446116) PDB: [6OL9](https://www.rcsb.org/structure/6OL9)
 1. Shihoya *et al.* (2019) "Crystal structure of heliorhodopsin" *Nature* doi:[10.1038/s41586-019-1604-6](https://doi.org/10.1038/s41586-019-1604-6) PDB: [6IS6](https://www.rcsb.org/structure/6IS6) Raw data: [Zenodo#3333323](https://zenodo.org/record/3333323)

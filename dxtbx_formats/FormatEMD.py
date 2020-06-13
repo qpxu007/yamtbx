@@ -29,6 +29,9 @@ def analyse_angle(metadata):
         alpha = numpy.rad2deg(float(md["Stage"]["AlphaTilt"]))
         alphas.append(alpha)
 
+    if len(alphas) < 2:
+        return [0,0], 0.
+
     d_alphas = numpy.diff(alphas)
     q25, q50, q75 = numpy.percentile(d_alphas, [25, 50, 75])
     iqr = q75-q25
@@ -49,7 +52,7 @@ def analyse_angle(metadata):
     if valid_range[0] > valid_range[1]:
         valid_range = [0, len(metadata)-1] # reset
         
-    mean_alpha_step = (alphas[valid_range[1]] - alphas[valid_range[0]])/(valid_range[1]-valid_range[0]+1)
+    mean_alpha_step = (alphas[valid_range[1]] - alphas[valid_range[0]])/(valid_range[1]-valid_range[0])
 
     return valid_range, mean_alpha_step
 # analyse_angle()
